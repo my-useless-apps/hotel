@@ -2,10 +2,10 @@
 nixPkgs = ['nodejs_18']
 
 [phases.install]
-cmds = ['cd server && npm install --production']
+cmds = ['cd client && npm install']
 
 [phases.build]
-cmds = ['echo "No build step required for backend"']
+cmds = ['cd client && npm run build']
 
 [start]
-cmd = 'cd server && npm start'
+cmd = 'cd client && npm start'
