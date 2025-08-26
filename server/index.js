@@ -53,6 +53,20 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev'));
 }
 
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: 'Welcome to Premium Stays API',
+    version: '1.0.0',
+    endpoints: {
+      health: '/health',
+      test: '/api/test'
+    },
+    documentation: 'Visit /api/test for API features'
+  });
+});
+
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.status(200).json({ 
