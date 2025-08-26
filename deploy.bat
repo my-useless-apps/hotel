@@ -46,3 +46,4 @@ echo 3. Select 'my-useless-apps/hotel'
 echo 4. Your app will be live in 2-3 minutes!
 
 pause
+
