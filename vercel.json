@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "JWT_SECRET": "hotel_booking_secure_jwt_secret_key_2024_minimum_32_characters",
+    "CLIENT_URL": "https://client-qh9zmha3v-yaroslavs-projects-63120884.vercel.app"
+  }
+}
