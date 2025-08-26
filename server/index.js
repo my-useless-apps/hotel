@@ -5,10 +5,10 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const morgan = require('morgan');
 
-// Import routes (these will be created)
-// const authRoutes = require('./routes/auth');
-// const publicRoutes = require('./routes/public');
-// const adminRoutes = require('./routes/admin');
+// Import routes
+const authRoutes = require('./routes/auth');
+const publicRoutes = require('./routes/public');
+const adminRoutes = require('./routes/admin');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -76,10 +76,10 @@ app.get('/health', (req, res) => {
   });
 });
 
-// Routes (uncomment when route files are created)
-// app.use('/api/auth', authRoutes);
-// app.use('/api', publicRoutes);
-// app.use('/admin/api', adminRoutes);
+// API Routes
+app.use('/api/auth', authRoutes);
+app.use('/api', publicRoutes);
+app.use('/admin/api', adminRoutes);
 
 // Placeholder route for testing
 app.get('/api/test', (req, res) => {
